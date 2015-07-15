@@ -5,7 +5,7 @@
 ## Install
 
 ```
-bower i findit --save
+bower i philip --save
 ```
 
 ## How to use?
