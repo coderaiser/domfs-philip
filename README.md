@@ -53,6 +53,7 @@ Or any other node-compitable [EventEmitter](https://iojs.org/api/events.html "Ev
         });
         
         upload.on('error', function(error) {
+            upload.abort();
             console.error(error);
         });
         
