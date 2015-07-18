@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "emitify": "~1.2.0",
-    "findit": "~1.1.0"
+    "findit": "~1.1.0",
+    "execon": "~1.2.2"
   }
 }
