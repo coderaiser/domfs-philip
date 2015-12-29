@@ -22,8 +22,7 @@
     "modules"
   ],
   "dependencies": {
-    "emitify": "~1.3.0",
     "execon": "~1.2.2",
-    "findit": "~1.1.3"
+    "emitify": "~2.0.0"
   }
 }
