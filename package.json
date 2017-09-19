@@ -5,8 +5,11 @@
   "description": "Process files and directories in DOM File System",
   "main": "lib/philip.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^4.7.1"
+  },
   "scripts": {
+    "lint": "eslint lib/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
