@@ -1,6 +1,6 @@
 {
   "name": "philip",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Process files and directories in DOM File System",
   "main": "legacy/philip.js",
   "dependencies": {

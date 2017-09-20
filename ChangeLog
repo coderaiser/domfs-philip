@@ -1,3 +1,9 @@
+2017.09.20, v2.0.2
+
+fix:
+- (philip) _process: arrow -> function
+
+
 2017.09.20, v2.0.1
 
 fix:
