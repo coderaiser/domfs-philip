@@ -1,16 +1,32 @@
 {
   "name": "philip",
-  "private": true,
   "version": "1.3.7",
   "description": "Process files and directories in DOM File System",
-  "main": "lib/philip.js",
-  "dependencies": {},
+  "main": "legacy/philip.js",
+  "dependencies": {
+    "domfs-findit": "^2.0.0",
+    "emitify": "^3.1.0",
+    "inherits": "^2.0.3",
+    "itchy": "^1.0.0"
+  },
   "devDependencies": {
-    "eslint": "^4.7.1"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.7.1",
+    "webpack": "^3.6.0"
   },
   "scripts": {
-    "lint": "eslint lib/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "redrun lint:*",
+    "lint:client": "eslint lib",
+    "lint:webpack": "eslint webpack",
+    "build": "redrun build:*",
+    "build:client": "webpack --progress",
+    "watch:client": "redrun build:client -- --watch",
+    "wisdom": "npm run build",
+    "build:legacy": "babel -d legacy lib",
+    "postbuild:legacy": "echo \"module.exports = require('./philip');\" > legacy/index.js"
   },
   "repository": {
     "type": "git",

@@ -5,38 +5,29 @@
 ## Install
 
 ```
-bower i philip --save
+npm i philip
 ```
 
 ## How to use?
 
-Add `philip.js` [findit](https://github.com/coderaiser/domfs-findit "Find It"), [execon](https://github.com/coderaiser/execon "Patterns of function calls")(or [async](https://github.com/caolan/async "Async utilities for node and the browser" with `window.exec = window.async`) and [emitify](https://github.com/coderaiser/emitify "Emitify").
-
-Or any other node-compitable [EventEmitter](https://iojs.org/api/events.html "Events") (set `window.Emitify = your_emitter` before using `findit`).
-
 ```html
-<script src="modules/emitify/lib/emitify.js"></script>
-<script src="modules/findit/lib/findit.js"></script>
-<script src="lib/philip.js"></script>
+<script src="dist/philip.js"></script>
+```
+
+When used with `webpack`:
+
+```js
+import philip from 'philip';
 ```
 
 ```js
-(function() {
-    'use strict';
-    
-    var node = window;
-    
-    node.addEventListener('drop', function (e) {
-        var upload,
-            entry,
-            finder,
-            item = e.dataTransfer.items[0];
-        
+    window.addEventListener('drop', function (e) {
         e.preventDefault();
         
-        entry   = item.webkitGetAsEntry();
+        const item = e.dataTransfer.items[0];
+        const entry   = item.webkitGetAsEntry();
         
-        upload = philip(entry, function(type, name, data/*, i, n,*/, callback) {
+        const upload = philip(entry, (type, name, data/*, i, n,*/, callback) => {
             var error = null;
             
             switch(type) {
@@ -49,29 +40,29 @@ Or any other node-compitable [EventEmitter](https://iojs.org/api/events.html "Ev
                 break;
             }
             
-            callback(error);
+            callback();
         });
         
-        upload.on('error', function(error) {
+        upload.on('error', (error) => {
             upload.abort();
             console.error(error);
         });
         
-        upload.on('progress', function(count) {
+        upload.on('progress', (count) => {
             console.log(count);
         });
         
-        upload.on('end', function() {
+        upload.on('end', () => {
             console.log('done');
         });
     });
-        
-    node.addEventListener('dragover', function (e) {
+    
+    window.addEventListener('dragover', (e) => {
         e.preventDefault();
     });
-})();
 ```
 
 ## License
 
 MIT
+
