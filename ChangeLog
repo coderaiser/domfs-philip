@@ -1,3 +1,10 @@
+2017.09.20, v2.0.1
+
+fix:
+- (package) lint:webpack
+- (philip) itcy -> itchy
+
+
 2017.09.20, v2.0.0
 
 feature:
