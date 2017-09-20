@@ -7,8 +7,6 @@ const {UglifyJsPlugin} = optimize;
 
 const dir = './lib';
 
-const {env} = process;
-
 const dist = path.resolve(__dirname, 'dist');
 const devtool = 'source-map';
 

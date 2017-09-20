@@ -20,7 +20,7 @@
   "scripts": {
     "lint": "redrun lint:*",
     "lint:client": "eslint lib",
-    "lint:webpack": "eslint webpack",
+    "lint:webpack": "eslint webpack*",
     "build": "redrun build:*",
     "build:client": "webpack --progress",
     "watch:client": "redrun build:client -- --watch",
