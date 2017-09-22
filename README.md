@@ -21,45 +21,45 @@ import philip from 'philip';
 ```
 
 ```js
-    window.addEventListener('drop', function (e) {
-        e.preventDefault();
+window.addEventListener('drop', (e) => {
+    e.preventDefault();
+    
+    const item = e.dataTransfer.items[0];
+    const entry   = item.webkitGetAsEntry();
+    
+    const upload = philip(entry, (type, name, data/*, i, n,*/, callback) => {
+        var error = null;
         
-        const item = e.dataTransfer.items[0];
-        const entry   = item.webkitGetAsEntry();
+        switch(type) {
+        case 'file':
+            console.log('file', name, data);
+            break;
         
-        const upload = philip(entry, (type, name, data/*, i, n,*/, callback) => {
-            var error = null;
-            
-            switch(type) {
-            case 'file':
-                console.log('file', name, data);
-                break;
-            
-            case 'directory':
-                console.log('directory', name);
-                break;
-            }
-            
-            callback();
-        });
+        case 'directory':
+            console.log('directory', name);
+            break;
+        }
         
-        upload.on('error', (error) => {
-            upload.abort();
-            console.error(error);
-        });
-        
-        upload.on('progress', (count) => {
-            console.log(count);
-        });
-        
-        upload.on('end', () => {
-            console.log('done');
-        });
+        callback();
     });
     
-    window.addEventListener('dragover', (e) => {
-        e.preventDefault();
+    upload.on('error', (error) => {
+        upload.abort();
+        console.error(error);
     });
+    
+    upload.on('progress', (count) => {
+        console.log(count);
+    });
+    
+    upload.on('end', () => {
+        console.log('done');
+    });
+});
+
+window.addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
 ```
 
 ## License
