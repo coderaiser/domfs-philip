@@ -1,21 +1,10 @@
 'use strict';
 
 const path = require('path');
-const webpack = require('webpack');
-const {optimize} = webpack;
-const {UglifyJsPlugin} = optimize;
-
 const dir = './lib';
 
 const dist = path.resolve(__dirname, 'dist');
 const devtool = 'source-map';
-
-const plugins = [
-    new UglifyJsPlugin({
-        sourceMap: true,
-        comments: false,
-    })
-];
 
 const rules = [{
     test: /\.js$/,
@@ -38,7 +27,6 @@ module.exports = {
         libraryTarget: 'var',
         devtoolModuleFilenameTemplate,
     },
-    plugins,
     externals: [
         externals
     ],

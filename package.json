@@ -15,15 +15,16 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "eslint": "^4.7.1",
-    "webpack": "^3.6.0",
-    "redrun": "^5.9.17"
+    "redrun": "^5.9.17",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10"
   },
   "scripts": {
     "lint": "redrun lint:*",
     "lint:client": "eslint lib",
     "lint:webpack": "eslint webpack*",
     "build": "redrun build:*",
-    "build:client": "webpack --progress",
+    "build:client": "webpack --progress --mode production",
     "watch:client": "redrun build:client -- --watch",
     "wisdom": "npm run build",
     "build:legacy": "babel -d legacy lib",
