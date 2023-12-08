@@ -5,7 +5,7 @@
   "main": "legacy/philip.js",
   "dependencies": {
     "domfs-findit": "^2.0.0",
-    "emitify": "^3.1.0",
+    "emitify": "^4.0.1",
     "inherits": "^2.0.3",
     "itchy": "^1.0.0"
   },
