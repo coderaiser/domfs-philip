@@ -25,14 +25,10 @@
   "scripts": {
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint",
-    "lint:client": "madrun lint:client",
-    "lint:webpack": "madrun lint:webpack",
     "build": "madrun build",
     "build:client": "madrun build:client",
     "watch:client": "madrun watch:client",
-    "wisdom": "madrun wisdom",
-    "build:legacy": "madrun build:legacy",
-    "postbuild:legacy": "madrun postbuild:legacy"
+    "wisdom": "madrun wisdom"
   },
   "repository": {
     "type": "git",
