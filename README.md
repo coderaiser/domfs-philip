@@ -24,11 +24,11 @@ import philip from 'philip';
 window.addEventListener('drop', (e) => {
     e.preventDefault();
     
-    const item = e.dataTransfer.items[0];
-    const entry   = item.webkitGetAsEntry();
+    const [item] = e.dataTransfer.items;
+    const entry = item.webkitGetAsEntry();
     
-    const upload = philip(entry, (type, name, data/*, i, n,*/, callback) => {
-        var error = null;
+    const upload = philip(entry, (type, name, data /*, i, n,*/, callback) => {
+        const error = null;
         
         switch(type) {
         case 'file':
@@ -65,4 +65,3 @@ window.addEventListener('dragover', (e) => {
 ## License
 
 MIT
-

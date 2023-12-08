@@ -27,17 +27,14 @@ module.exports = {
         libraryTarget: 'var',
         devtoolModuleFilenameTemplate,
     },
-    externals: [
-        externals
-    ],
+    externals: [externals],
     module: {
         rules,
     },
 };
 
-function externals(context, request, fn) {
-    const list = [
-    ];
+function externals({request}, fn) {
+    const list = [];
     
     if (list.includes(request))
         return fn(null, request);
@@ -49,4 +46,3 @@ function devtoolModuleFilenameTemplate(info) {
     const resource = info.absoluteResourcePath.replace(__dirname + path.sep, '');
     return `file://philip/${resource}`;
 }
-

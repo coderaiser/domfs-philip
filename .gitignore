@@ -3,3 +3,7 @@ npm-debug.log
 dist
 legacy
 
+.idea
+*.swp
+yarn-error.log
+coverage
