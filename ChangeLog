@@ -1,3 +1,8 @@
+2023.12.08, v3.0.1
+
+fix:
+- 0cd3757 eslint-plugin-n: dependencies -> devDependencies
+
 2023.12.08, v3.0.0
 
 feature:

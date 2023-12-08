@@ -1,6 +1,6 @@
 {
   "name": "philip",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "commonjs",
   "description": "Process files and directories in DOM File System",
   "main": "lib/philip.js",
